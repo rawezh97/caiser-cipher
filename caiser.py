@@ -16,36 +16,11 @@ for i in word_index:
     new_word.append(alphabet[key_word])
 print ("the cipher :"+''.join(new_word))
 
-new_word_index = []
-new_word2 = []
-for i in new_word :
-    new_word_index.append(alphabet.index(i))
-for i in new_word_index:
-    key_word = i+5
-    if (key_word > 25):
-        key_word = key_word - 26
-    if key_word == 26:
-        key_word -= 1
-    new_word2.append(alphabet[key_word])
-print ("the cipher :"+''.join(new_word2))
-
-
-new_cipher_index = []
-new_plain_text = []
-for i in new_word2:
-    new_cipher_index.append(alphabet.index(i))
-for i in new_cipher_index:
-    key_word = i - 5
-    if key_word < 0 :
-        key_word = key_word +26
-    new_plain_text.append(alphabet[key_word])
-print("plain text :"+ ''.join(new_plain_text))
-
-f_cipher_index = []
+cipher_index = []
 plain_text = []
-for i in new_plain_text:
-    f_cipher_index.append(alphabet.index(i))
-for i in f_cipher_index:
+for i in new_word:
+    cipher_index.append(alphabet.index(i))
+for i in cipher_index:
     key_word = i - 3
     if key_word < 0 :
         key_word = key_word +26
