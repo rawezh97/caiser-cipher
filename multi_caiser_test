@@ -1,0 +1,44 @@
+
+alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+
+def encipher(word,key):
+    word_index = []
+    new_word = []
+    for i in word :
+        if i ==" ":
+            pass
+        else:
+            word_index.append(alphabet.index(i))
+    for i in word_index:
+        key_word = i + key
+        if (key_word > 25):
+            key_word = key_word - 25
+        if key_word == 26:
+            key_word -= 1
+        new_word.append(alphabet[key_word])
+    print ("the cipher :"+''.join(new_word))
+    return new_word
+
+def decipher(wo,ke):
+    cipher_index = []
+    plain_text = []
+    for i in wo:
+        cipher_index.append(alphabet.index(i))
+    for i in cipher_index:
+        key_word = i - ke
+        if key_word < 0 :
+            key_word = key_word +26
+        plain_text.append(alphabet[key_word])
+    print("plain text :"+ ''.join(plain_text))
+    return plain_text
+
+test = encipher("avatar", 3)
+x = ''.join(test)
+test2 = encipher(x, 3)
+y = ''.join(test2)
+
+d1 = decipher(y,3)
+z = ''.join(d1)
+d2 = decipher(z,3)
+
+
